@@ -24,7 +24,7 @@ public class Main7 {
             hashMap.put(a.eprDeadlinePrihlaska.value, a.eprDeadlinePrihlaska.value);
         });
        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
-       return hashMap.entrySet().stream().map(Map.Entry::getKey).map(dateStr -> LocalDate.parse(dateStr, formatter)).sorted().map(date -> date.format(formatter)).collect(Collectors.joining(","));
+       return hashMap.entrySet().stream().map(entry -> entry.getKey()).map(dateStr -> LocalDate.parse(dateStr, formatter)).sorted().map(date -> date.format(formatter)).collect(Collectors.joining(","));
 
     }
 }
